@@ -1,9 +1,9 @@
+import { Button, Card, Form, Input, InputNumber } from "antd";
 import React, { useEffect, useState } from "react";
-import { Button, Form, Input, InputNumber, Card } from "antd";
-import { apiService } from "../../services/apiService";
-import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { apiService } from "../../services/apiService";
 
 export default function AddEditPatientDetails() {
   const [patientDetail, setPatientDetail] = useState({});
@@ -131,16 +131,12 @@ export default function AddEditPatientDetails() {
               message: "Please enter contact number of patient",
             },
             {
-              type: 'number',
-              message: 'Please enter valid contact number'
-            },
-            {
               min: 10, max: 10,
               message: 'Please enter 10 digit contact number'
             }
           ]}
         >
-          <Input placeholder="Enter Contact Number" />
+          <Input placeholder="Enter Contact Number" type="number" />
         </Form.Item>
         <Form.Item
           name="email"
